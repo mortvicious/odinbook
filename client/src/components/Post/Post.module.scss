@@ -1,0 +1,105 @@
+@import '../../styles/colors';
+
+.Post {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba($clr-contrast, 0.1);
+    // width: 40%;
+    padding: 1rem;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 2rem;
+    .post-user {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        .post-user-info {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+        }
+        .post-user-avatar {
+            border: 3px solid $clr-contrast;
+            width: 40px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+        }
+        .post-user-username {
+            color: $clr-contrast;
+            font-weight: 600;
+            font-size: 20px;
+        }
+        .post-user-title {
+            font-weight: 400;
+            font-size: 18px;
+        }
+    }
+    .post-text {
+        margin-top: 1rem;
+        font-weight: 300;
+        width: 80%;
+        text-align: left;
+        height: 30px;
+    }
+    .post-more {
+        font-size: 40px;
+        align-self: flex-start;
+        color: $clr-contrast;
+    }
+    .post-statistics {
+        align-self: flex-start;
+        // position: absolute;
+        gap: 1rem;
+        display: flex;
+        // bottom: -2rem;
+        margin-top: 2rem;
+        left: 0;
+        align-items: center;
+        text-align: center;
+        font-size: 15px;
+        justify-content: space-between;
+        .wrapper-statistics {
+            display: flex;
+            gap: 1rem;
+        }
+        .comments {
+            margin-left: 1rem;
+            width: 350px;
+        }
+        span {
+            align-items: center;
+            text-align: center;
+        }
+        .statistic-element {
+            align-items: center;
+            text-align: center;
+            display: flex;
+            gap: 5px;
+            font-weight: 500;
+            color: rgba($clr-dark, 0.7)
+        }
+        .date {
+            // margin-left: 120%;
+            justify-self: flex-end;
+        }
+    }
+}
+
+
+.post-comment-input {
+    // height: 35px;
+    // justify-content: center;
+    // padding: 0.2rem;
+    height: 40px;
+    padding: 10px;
+}
+
+.post-comment-container {
+    margin-top: 1rem;
+}
+
+.post-comment-btn {
+    
+}

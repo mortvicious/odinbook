@@ -1,0 +1,64 @@
+@import '../../styles/colors';
+@import '../../styles/fonts';
+
+.Header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    min-width: 100%;
+    justify-content: space-between;
+    &::before {
+        content: '';
+        top: 7rem;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: rgba($clr-contrast, 0.1);
+    }
+    .user-container {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        .user-avatar {
+            border: 3px solid $clr-contrast;
+            width: 40px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+        }
+        .username {
+            color: $clr-contrast;
+            font-weight: 600;
+            font-size: 20px;
+        }
+    }
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 100;
+    color: $clr-contrast;
+    font-family: $fnt-main;
+    position: relative;
+    &::before {
+        bottom: -7px;
+        right: -17px;
+        border-radius: 2px;
+        content: '';
+        position: absolute;
+        width: 70%;
+        height: 3px;
+        background-color: $clr-contrast;
+    }
+}
+
+.functional-menu {
+    display: flex;
+    gap: 5rem;
+    color: $clr-contrast;
+    color: $clr-dark;
+    font-weight: 500;
+    font-size: 20px;
+}
+
