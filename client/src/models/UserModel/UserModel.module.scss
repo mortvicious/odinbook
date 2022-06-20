@@ -1,0 +1,55 @@
+@import '../../styles/colors';
+@import '../../styles/fonts';
+
+.User {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    // gap: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    &.user-info-reversed {
+        flex-direction: row-reverse;
+    }
+    &.user-info-friend {
+        align-self: flex-start;
+        margin-left: 3.4rem;
+        padding-block: 0.5rem;
+    }
+}
+
+.avatar {
+    border: 2px solid $clr-contrast;
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px #c6a2ff;
+}
+
+.avatar-comment {
+    display: none;
+}
+
+.username {
+    color: $clr-contrast;
+    font-family: $fnt-main;
+    font-weight: 600;
+    font-size: 20px;
+    text-shadow: 0px 0px 10px #c6a2ff;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        text-shadow: 0px 0px 15px #c6a2ff;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+.username-comment {
+    font-size: 15px !important;
+}
+

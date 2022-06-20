@@ -1,0 +1,45 @@
+.CommentModule {
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    .comment-content {
+        width: 85%;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 200;
+    }
+}
+
+.comment-statistics {
+    align-items: center;
+    text-align: center;
+    // justify-self: flex-end;
+    // width: 8%;
+    .wrapper-statistics {  
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        .statistic-element {
+            font-size: 12px;
+            font-family: $fnt-main;
+            span {
+                font-size: 15px !important;
+            }
+        }
+    }
+}
+
+.comment-avatar {
+    width: 40px !important;
+}
+
+.comment-text {
+    font-size: 9px !important;
+}
+
+.username-wrapper {
+    width: 6%;
+}

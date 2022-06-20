@@ -1,0 +1,26 @@
+.PostModel {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.title {
+    font-size: 25px;
+}
+
+.content {
+    line-height: 25px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.functional-container {
+    
+}

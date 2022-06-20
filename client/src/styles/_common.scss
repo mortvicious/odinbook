@@ -46,3 +46,13 @@
 .d-b {
     display: block !important;
 }
+
+$clr-bor-no: 0px;
+$clr-bor-s: 5px;
+$clr-bor-m: 15px;
+$clr-bor-l: 25px;
+
+
+.no-styles {
+    background-color: rgba(black, 0)
+}

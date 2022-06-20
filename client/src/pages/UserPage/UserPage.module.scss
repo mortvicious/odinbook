@@ -1,0 +1,111 @@
+@import '../../styles/colors';
+@import '../../styles/fonts';
+
+.UserPage {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info {
+    // display: flex;
+    // gap: 10rem;
+    // align-items: center;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin-top: 3rem;
+}
+
+.user-statistics {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .username {
+        color: $clr-contrast;
+        font-family: $fnt-main;
+        font-weight: 600;
+        font-size: 40px;
+        text-shadow: 0px 0px 10px #c6a2ff;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            text-shadow: 0px 0px 15px #c6a2ff;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+}
+
+.user-username-status {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    .status {
+        aspect-ratio: 1;
+        width: 15px;
+        border-radius: 50%;
+        background-color: rgb(255, 176, 176);
+        box-shadow: 0px 0px 15px rgb(255, 176, 176), inset 0px 0px 5px rgb(255, 176, 176);
+        border: none;
+        &.online {
+            background-color: rgb(176, 255, 181) !important;
+            box-shadow: 0px 0px 5px rgb(76, 255, 88) !important;
+        }
+    }
+}
+
+.avatar {
+    // display: flex;
+    aspect-ratio: 1;
+    width: 300px;
+    border: 3px solid white;
+    box-shadow: 0px 0px 20px #c6a2ff;
+    border-radius: 10px;
+}
+
+.bio-container {
+    display: flex;
+    margin-top: 1rem;
+    .bio {
+        // white-space: pre-wrap;
+        line-height: 30px;
+        font-size: 20px;
+        font-weight: 200;
+        width: 90%;
+        // margin-top: 5rem;
+    }
+}
+
+.last-seen {
+    font-weight: 100;
+    // margin-top: 0.5rem;
+}
+
+
+.functional-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    // width: 80%;
+    align-items: center;
+    // margin-inline: auto;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+.functional-btn {
+    aspect-ratio: 1\2;
+    width: 10rem;
+    border: 2px solid white;
+    background-color: rgba(black, 0);
+    text-shadow: 0px 0px 5px #c6a2ff;
+    box-shadow: 0px 0px 10px #c6a2ff, inset 0px 0px 10px #c6a2ff;
+    font-weight: 400;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    &:hover, :focus {
+        box-shadow: 0px 0px 15px #c6a2ff, inset 0px 0px 10px #c6a2ff;
+        text-shadow: 0px 0px 10px #c6a2ff;
+        transition: all 0.2s ease-in-out;
+    }
+}
