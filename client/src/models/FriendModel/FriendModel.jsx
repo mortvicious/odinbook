@@ -15,15 +15,13 @@ const FriendModel = ({username, link, isRequest, candidateFriendId, userId}) => 
     if (id === 'accept') {
       friend.acceptFriendRequest(userId)
     } else if (id === 'decline') {
-      friend.declineFriendRequest()
-    } else if (id === 'remove') {
-      friend.removeFriend()
-    }
+      friend.declineFriendRequest(userId)
+    } 
   }
 
   const handleRemoveBtn = async() => {
     try {
-
+      friend.removeFriend(userId)
     } catch {
 
     }

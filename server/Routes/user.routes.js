@@ -16,8 +16,8 @@ router.post('/friend-requests/get', authMiddleware, userController.getFriendsReq
 router.post('/friend-requests/get/user-info', authMiddleware, userController.getUserById)
 router.patch('/friend-requests/accept', authMiddleware, userController.friendRequest.accept)
 router.post('/friends/get', authMiddleware, userController.friends.getFriendsList)
+router.patch('/friend/remove', authMiddleware, userController.friends.removeFriend)
+router.patch('/friend-requests/decline', authMiddleware, userController.friendRequest.decline)
 
 
-router.patch('/friend:decline', authMiddleware, userController.friendRequest.decline)
-router.patch('/friend:remove', authMiddleware, userController.friends.removeFriend)
 module.exports = router

@@ -52,9 +52,10 @@ class Friend {
           }
     }
 
-    declineFriendRequest = async(candidateFriendId, userId) => {
+    declineFriendRequest = async(candidateFriendId) => {
         try {
-            const response = await axios.patch('http://localhost:5000/api/friend:decline',
+            const userId = user.id
+            const response = await axios.patch('http://localhost:5000/api/user/friend-requests/decline',
             {candidateFriendId, userId},
             {
                 headers:{Authorization: `Bearer ${localStorage.getItem('token')}`},
@@ -64,13 +65,15 @@ class Friend {
           }
     }
 
-    removeFriend = async(candidateFriendId, userId) => {
+    removeFriend = async(candidateFriendId) => {
         try {
-            const response = await axios.patch('http://localhost:5000/api/friend:remove',
+            const userId = user.id
+            const response = await axios.patch('http://localhost:5000/api/user/friend/remove',
             {candidateFriendId, userId},
             {
                 headers:{Authorization: `Bearer ${localStorage.getItem('token')}`},
             })
+            console.log(`remove friend with id ${candidateFriendId}`)
           } catch(e) {
             console.log(e)
           }    

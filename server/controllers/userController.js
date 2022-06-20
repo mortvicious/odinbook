@@ -72,19 +72,37 @@ class UserController {
             }
         },
 
-        decline: async () => {
+        decline: async (req, res) => {
             try {
                 const {candidateFriendId, userId} = req.body
-                const user = await User.findById(userId)
-                if (!user.requests.from.includes(candidateFriendId)) {
-                    return res.json({message: 'Friend request not found'})
-                }
-                const index = user.requests.from.indexOf(candidateFriendId)
-                if (index > -1) {
-                    user.requests.from.splice(index, 1)
-                }
-                user.save()
-                res.status(200).json(user.requests.from)
+    
+                User.findByIdAndUpdate(
+                    candidateFriendId,
+                    {
+                        $pull: {'requests.to' : userId}
+                    }, {
+                        new: true
+                    }, function(err, affected) {
+                        if(err)
+                           console.log(err)
+                        else
+                           console.log(affected)
+                    }
+                )
+    
+                User.findByIdAndUpdate(
+                    userId,
+                    {
+                        $pull: {'requests.from' : candidateFriendId}
+                    }, {
+                        new: true
+                    }, function(err, affected) {
+                        if(err)
+                           console.log(err)
+                        else
+                           console.log(affected)
+                    }
+                )
             } catch (e) {
                 res.status(400).json({message: 'Error declining friend request'})
                 
@@ -95,7 +113,7 @@ class UserController {
             try {
                 const {candidateFriendId, userId} = req.body
     
-                await User.findOneAndUpdate(
+                User.findOneAndUpdate(
                     {
                         _id: candidateFriendId
                     }, 
@@ -106,7 +124,7 @@ class UserController {
                     }
                 )
     
-                await User.findOneAndUpdate(
+                User.findOneAndUpdate(
                     {
                         _id: userId
                     }, 
@@ -138,15 +156,34 @@ class UserController {
         async removeFriend(req, res) {
             try {
                 const {candidateFriendId, userId} = req.body
-                const user = await User.findById(userId)
-                if (!user.friends.includes(userId)) {
-                    return res.json({message: 'Friend not found'})
-                }
-                const index = user.friends.indexOf(candidateFriendId)
-                if (index > -1) {
-                    user.friends.splice(index, 1)
-                }
-                user.save()
+    
+                User.findByIdAndUpdate(
+                        candidateFriendId,
+                    {
+                        $pull: {'friends' : userId},
+                    }, {
+                        new: true
+                    }, function(err, affected) {
+                        if(err)
+                           console.log(err)
+                        else
+                           console.log(affected)
+                    }
+                )
+    
+                User.findByIdAndUpdate(
+                        userId,
+                    {
+                        $pull: {'friends' : candidateFriendId},
+                    }, {
+                        new: true
+                    }, function(err, affected) {
+                        if(err)
+                           console.log(err)
+                        else
+                           console.log(affected)
+                    }
+                )
             } catch (e) {
                 res.status(400).json({message: 'Error deleting friend'})
             }
