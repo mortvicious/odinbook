@@ -79,6 +79,16 @@ export default function Friends(props) {
     }
   }
 
+  const check = () => {
+    return (
+      displayRequestsFrom.map((friendCandidate) => {
+        return (
+          <FriendModel isRequest={true} link={friendCandidate.link} username={friendCandidate.username} userId={friendCandidate.userId}/>
+        )
+      })
+    )
+  }
+
   const handleFriendRequestsSet = async() => {
 
   }
@@ -150,9 +160,9 @@ export default function Friends(props) {
           <button onClick={() => console.log(displayRequestsFrom)}>DRF</button>
           <button onClick={forceUpdate}>FU</button>
           <div className={styles['friends-container']}>
-          {render.requests()}
+          {/* {render.requests()} */}
           {/* {displayRequestsFrom} */}
-
+          {check()}
           </div>
           <span className={styles['section-title']}>Friends:</span>
           {render.friends()}
