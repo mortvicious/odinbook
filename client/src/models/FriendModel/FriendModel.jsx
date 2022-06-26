@@ -6,7 +6,7 @@ import friend from '../../common/store/Friend'
 
 
 
-const FriendModel = ({username, link, isRequest, candidateFriendId, userId}) => {
+const FriendModel = ({username, link, isRequest, isFriend, candidateFriendId, userId}) => {
 
   // const [friend, setFriend] = useState({})
 
@@ -14,14 +14,17 @@ const FriendModel = ({username, link, isRequest, candidateFriendId, userId}) => 
     const id = e.target.id
     if (id === 'accept') {
       friend.acceptFriendRequest(userId)
+      window.location.reload()
     } else if (id === 'decline') {
       friend.declineFriendRequest(userId)
+      window.location.reload()
     } 
   }
 
   const handleRemoveBtn = async() => {
     try {
       friend.removeFriend(userId)
+      window.location.reload()
     } catch {
 
     }
@@ -65,11 +68,15 @@ const FriendModel = ({username, link, isRequest, candidateFriendId, userId}) => 
   }, [])
 
   return (
-    <div className={styles.Friend}>
+    <div className={
+        styles.Friend + ` ` +
+        (isFriend? styles['friend_'] : '') 
+        }>
       <UserModel
         username={username}
         link={link}
-        isFriend={true}
+        isRequest={true}
+        isFriend={isRequest? true : false}
         userId={userId}
       />
       <div className={styles['functional-container']}>

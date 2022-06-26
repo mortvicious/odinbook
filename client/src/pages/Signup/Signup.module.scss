@@ -7,6 +7,7 @@
     align-items: center;
     gap: 3rem;
     position: relative;
+    justify-content: center;
 }
 
 .title {
@@ -107,8 +108,38 @@ button.signup-btn {
     position: absolute;
     top: 30vh;
     left: 1rem;
-    color: red;
+    color: rgb(255, 183, 183);
+    text-shadow: 0 0 5px red;
+    font-size: 20px;
+    font-family: $fnt-main;
+    text-transform: uppercase;
     gap: 1rem;
     display: flex;
     flex-direction: column;
 }
+.success-message {
+    // display: none;
+    overflow: none;
+    color: rgb(198, 255, 198);
+    text-shadow: 0 0 5px green;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    @keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      @-webkit-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+    &.visible {
+        // display: block;
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+    }
+}
+

@@ -13,6 +13,7 @@ export default function Friends(props) {
   const [displayRequestsFrom, setDisplayRequestsFrom] = useState([])
 
   const [friends, setFriends] = useState(toJS(friend.friends))
+  // const friends = toJS((friend.friends))
   const [displayFriends, setDisplayFriends] = useState([])
 
 
@@ -35,10 +36,11 @@ export default function Friends(props) {
   const getUsersToDisplayInFriends = async() => {
     const _arr = [...displayFriends]
     for (let f of friends) {
-      const _friend = await userPage.fetchUserDataLite(f)
+      // const _friend = await userPage.fetchUserDataLite(f)
+      const _friend = await friend.getFriend(f)
       _arr.push(
         {
-          isRequest: true,
+          isFriend: true,
           link: '#',
           username: _friend.login,
           userId: _friend._id

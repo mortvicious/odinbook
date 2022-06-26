@@ -1,6 +1,7 @@
 const User = require('../models/User')
 const fs = require('fs')
 const config = require('config')
+const UserService = require('../services/userService')
 
 class UserController {
 
@@ -8,7 +9,8 @@ class UserController {
     async getFriendsRequestList (req, res) {
         try {
             const {userId} = req.body
-            const user = await User.findById(userId)
+            // const user = await User.findById(userId)
+            const user = await UserService.findUser(userId)
             // console.log(user)
             return res.status(200).json(user.requests)
             // return res.status(200).json(`azazaza`)
@@ -22,9 +24,9 @@ class UserController {
 
         getFriendsRequestList: async (req, res) => {
             try {
-                const {userId} = req.body
-                console.log(user)
-                const user = await User.findById(userId)
+                const {userId} = req.query
+                const user = await User.findById(userId).select('requests')
+                // const user = await UserService.findUser(userId, 'requests')
                 return res.status(200).json(user)
                 // return res.status(200).json(`azazaza`)
 
@@ -113,27 +115,35 @@ class UserController {
             try {
                 const {candidateFriendId, userId} = req.body
     
-                User.findOneAndUpdate(
-                    {
-                        _id: candidateFriendId
-                    }, 
+                User.findByIdAndUpdate(
+                    candidateFriendId,
                     {
                         $addToSet: {'requests.from' : userId}
                     }, {
                         new: true
+                    }, function(err, affected) {
+                        if(err)
+                           console.log(err)
+                        else
+                           console.log(affected)
                     }
                 )
     
-                User.findOneAndUpdate(
-                    {
-                        _id: userId
-                    }, 
+                User.findByIdAndUpdate(
+                    userId,
                     {
                         $addToSet: {'requests.to' : candidateFriendId}
                     }, {
                         new: true
+                    }, function(err, affected) {
+                        if(err)
+                           console.log(err)
+                        else
+                           console.log(affected)
                     }
                 )
+
+                return res.status(200).json({message: 'Request sent'})
     
             } catch (e) {
                 res.status(400).json({message: 'Error sending friend request'})
@@ -145,9 +155,11 @@ class UserController {
 
         async getFriendsList(req, res) {
             try {
-                const {userId} = req.body
-                const user = await User.findById(userId)
-                return res.status(200).json(user.friends)
+                const {userId} = req.query
+                // const user = await User.findById(userId).select('friends')
+                const user = await UserService.findUser(userId, 'friends')
+                return res.status(200).json(user)
+
             } catch (e) {
                 console.log(e)
             }
@@ -187,10 +199,31 @@ class UserController {
             } catch (e) {
                 res.status(400).json({message: 'Error deleting friend'})
             }
+        },
+
+        async getFriendInfo(req, res) {
+            try {
+                const {friendId} = req.query
+                const user = await User.findById(friendId).select('login email _id link')
+                // const user = await UserService.findUser(friendId, 'login email _id link')
+                res.status(200).json(user)
+            } catch {
+
+            }
         }
     }
 
-
+    
+    
+    async getUserById(req, res) {
+        try {
+            const {userId} = req.body
+            const user = await User.findById(userId)
+            res.status(200).json(user)
+        } catch (e) {
+            console.log(e)
+        }
+    }
 
 
 
@@ -216,17 +249,6 @@ class UserController {
 
     async getUserPosts(req, res) {
 
-    }
-
-    async getUserById(req, res) {
-        try {
-            const {userId} = req.body
-            console.log(userId)
-            const user = await User.findById(userId)
-            res.status(200).json(user)
-        } catch (e) {
-            console.log(e)
-        }
     }
 }
 

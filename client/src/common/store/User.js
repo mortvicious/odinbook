@@ -4,10 +4,10 @@ import PATH from '../routing/routes'
 
 class User {
 
-    username = ''
+    username = sessionStorage.getItem('username')
     isAuth = false
     error = null
-    id = localStorage.getItem('id')
+    id = sessionStorage.getItem('id') || ''
     link = ''
     friends = []
     communities = []
@@ -20,6 +20,7 @@ class User {
     setUser = (username, id) => {
         this.username = username
         this.id = id
+        sessionStorage.setItem('username', username)
 
         //debug
         // this.isAuth = true
@@ -28,6 +29,11 @@ class User {
 
     setId = (id) => {
         localStorage.setItem('id', id)
+        sessionStorage.setItem('id', id)
+    }
+
+    setError = (error) => {
+        this.error = error
     }
 
     setToken = (token) => {
@@ -35,16 +41,18 @@ class User {
     }
 
     registration = async (email, login, password, link) => {
-
         try {
+            this.setError(null)
             const response = await axios.post(PATH.SERVER.REGISTRATION, {
                 email,
                 login,
                 password,
                 link
             })
+            return true
         } catch (e) {
             this.error = e.response.data.errors
+            return false
         }
     }
 
@@ -67,14 +75,18 @@ class User {
                 response.data.id
             )
         } catch (e) {
-            console.log(e.response.data.message)
-            console.log(e.response.data.errors)
+            this.error = e.response.data.message
+            // console.log(e.response.data.message)
+            // console.log(e.response.data.errors)
+            // console.log(`ERR IS ${this.error}`)
         }
     }
 
     logout = () => {
         this.isAuth = false
         this.setUser('', '')
+        sessionStorage.removeItem('id')
+        sessionStorage.removeItem('username')
         localStorage.removeItem('token')
         localStorage.removeItem('id')
 

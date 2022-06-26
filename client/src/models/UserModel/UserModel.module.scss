@@ -16,10 +16,15 @@
     &.user-info-reversed {
         flex-direction: row-reverse;
     }
-    &.user-info-friend {
+    &.user-info-request, &.user-info-friend {
         align-self: flex-start;
         margin-left: 3.4rem;
         padding-block: 0.5rem;
+    }
+    &.user-info-friend {
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
     }
 }
 

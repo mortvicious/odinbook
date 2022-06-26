@@ -1,4 +1,4 @@
-import { makeAutoObservable, toJS } from "mobx";
+import { makeAutoObservable } from "mobx";
 import axios from 'axios'
 import PATH from '../routing/routes'
 import user from './User'
@@ -29,7 +29,7 @@ class Friend {
     sendFriendRequest = async(candidateFriendId) => {
         const userId = user.id
         try {
-            const response = await axios.post('http://localhost:5000/api/user/friend:send',
+            const response = await axios.post('http://localhost:5000/api/user/friend-requests/send',
             {candidateFriendId, userId},
             {
                 headers:{Authorization: `Bearer ${localStorage.getItem('token')}`},
@@ -79,15 +79,30 @@ class Friend {
           }    
     }
 
+    // getFriendRequestList = async() => {
+    //     const userId = user.id
+    //     try {
+    //         const response = await axios.post('http://localhost:5000/api/user/friend-requests/get',
+    //         {userId},
+    //         {
+    //             headers:{Authorization: `Bearer ${localStorage.getItem('token')}`},
+    //         })
+    //         this.setRequestsFromList(response.data.from)
+    //     } catch (e) {
+    //         console.log(e)
+    //     }
+    // }
+
     getFriendRequestList = async() => {
         const userId = user.id
         try {
-            const response = await axios.post('http://localhost:5000/api/user/friend-requests/get',
-            {userId},
+            const response = await axios.get('http://localhost:5000/api/user/friends/requests', 
             {
+                params: {userId},
                 headers:{Authorization: `Bearer ${localStorage.getItem('token')}`},
             })
-            this.setRequestsFromList(response.data.from)
+            this.setRequestsFromList(response.data.requests.from)
+            console.log(response)
         } catch (e) {
             console.log(e)
         }
@@ -96,27 +111,30 @@ class Friend {
     getFriendsList = async() => {
         const userId = user.id
         try {
-            const response = await axios.post('http://localhost:5000/api/user/friends/get',
-            {userId},
+            const response = await axios.get('http://localhost:5000/api/user/friends',
             {
+                params: {userId},
                 headers:{Authorization: `Bearer ${localStorage.getItem('token')}`},
             })
             // this.setFriendsList(response.data.friends)
-            this.setFriendsList(response.data)
-            console.log(`friend list GET`)
-            // console.log(this.friends)
+            this.setFriendsList(response.data.friends)
         } catch (e) {
             console.log(e)
         }
     }
 
     getFriend = async(friendId) => {
-        const response = await axios.post('/user/friend-requests/get/user-info',
-        {friendId},
-        {
-            headers:{Authorization: `Bearer ${localStorage.getItem('token')}`},
-        })
-        return response
+        try {
+            const response = await axios.get('http://localhost:5000/api/user/friend',
+            // {friendId},
+            {
+                params: {friendId},
+                headers:{Authorization: `Bearer ${localStorage.getItem('token')}`},
+            })
+            return response.data
+        } catch (e) {
+            console.log(e)
+        }
     }
 
 

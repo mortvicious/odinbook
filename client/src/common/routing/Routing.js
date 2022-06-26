@@ -1,7 +1,8 @@
 import {
     BrowserRouter as Router,
     Routes,
-    Route
+    Route,
+    useParams
   } from "react-router-dom";
 import PATH from './routes'
 import Home from '../../pages/Home/Home'
@@ -29,7 +30,10 @@ const Routing = () => {
         <Route path='/communities' element={<Communities/>}/>
         <Route path='/messages' element={<Messages/>}/>
         <Route path='/settings' element={<Settings/>}/>
-        <Route path='/user-page' element={<UserPage/>}/>
+        {/* <Route path='/user-page' element={<UserPage/>}/> */}
+
+        <Route path='/user:urlUserId' element={<UserPage/>}/>
+
         <Route path='/post/0' element={<PostPage/>}/>
       </Routes>
     </Router>

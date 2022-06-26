@@ -24,6 +24,7 @@ const Main = () => {
                         date={post.date}
                         id={post._id}
                         userId={post.userId}
+                        // link={post.link}
                         />
                     )
                 })

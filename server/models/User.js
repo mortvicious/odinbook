@@ -17,7 +17,13 @@ const User = new Schema({
         from: []
     }},
     posts: {type: Array, default: []},
-    settings: {type: Array, default: []},
+    settings: {type: Object, default: {
+        account: {},
+        privacy: {},
+        notifications: {},
+        chat: {},
+        language: {}
+    }},
     registrationDate: {type: String, default: Date.now()}
 })
 

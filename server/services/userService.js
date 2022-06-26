@@ -16,6 +16,15 @@ class UserService {
 
     }
 
+    findUser = async(userId, selects) => {
+        if (!selects) {
+            const user = await User.findById(userId)
+            return user
+        }
+        const user = await User.findById(userId).select(selects)
+        return user
+    }
+
 }
 
 module.exports = new UserService()
