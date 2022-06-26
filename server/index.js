@@ -25,6 +25,7 @@ app.use(express.json())
 app.use('/api/auth', authRouter)
 app.use('/api/post', postRouter)
 app.use('/api/user', userRouter)
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 const start = async () => {
     try {
