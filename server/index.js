@@ -1,7 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const config = require('config')
-const PORT = config.get('serverPort')
+// const PORT = config.get('serverPort')
+const PORT = 5000
 const cookieParser = require('cookie-parser')
 const authRouter = require('./Routes/auth.routes')
 const postRouter = require('./Routes/post.routes')
@@ -13,7 +14,7 @@ const app = express()
 
 // const bodyParser = require('body-parser');
 
-const port = process.env.PORT || 5000;
+
 
 app.use(cookieParser())
 // app.use(corsMiddleware)
