@@ -2,9 +2,6 @@ import React, {useState, useEffect} from 'react'
 import styles from './Input.module.scss'
 import user from '../../common/store/User'
 import axios from 'axios'
-// import useKeyPress from '../../common/hooks/useKeyPress'
-import { useHotkeys } from 'react-hotkeys-hook'
-
 
 export default function Input(props) {
 
@@ -33,46 +30,6 @@ export default function Input(props) {
             console.log(e.response.data)
         }
     }
-
-    // const handleKeySet = (e) => {
-        // if (e.key === 'Control') {
-        //     // console.log(e.key)
-        //     handlePost()
-        // }
-    // }
-
-    useEffect(() => {
-        // console.log(regBody)        
-    }, [regBody])
-
-    // useEffect(() => {
-    //     window.addEventListener('keydown', handleKeySet)
-    //     return () => {
-    //         window.removeEventListener('keydown', handleKeySet)
-    //     }
-    // })
-
-
-    // const [keys, setKeys] = useState({
-    //     enter: false,
-    //     ctrl: false
-    // })
-
-    // const handleKeySet = (e) => {
-    //     console.log(keys)
-    //     if (e.key === 'Enter') {
-    //         setKeys({...keys, enter: true})
-    //     } else if (e.key === 'Control') {
-    //         setKeys({...keys, ctrl: true})
-    //     }
-    //     if (keys.enter === true && keys.ctrl === true) {
-    //         handlePost()
-    //     }
-    // }
-
-    // useKeyPress(['Enter'], handleKeySet);
-    // useHotkeys('a', handlePost)
-
 
 
     return (
