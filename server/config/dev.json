@@ -1,3 +1,7 @@
 {
-    
+    "serverPort" : 5000,
+    "dbUrl" : "mongodb+srv://odinmaster:23Elfaeaaa@odin.5kxoa.mongodb.net/?retryWrites=true&w=majority",
+    "secretKey" : "gjJvsn052v110_r42O04rzzZaqIt2Nvs88591963N___vnrj_1j9f411",
+    "assetsPath" : "/home/shin/Developement/Projects/Odinbook/server/assets/users"
 }
+
