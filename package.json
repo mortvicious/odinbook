@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start": "node ./server/bin/www/app.js",
-        "devstart": "nodemon ./server/bin/www/app.s",
+        "start": "node ./server/index.js",
+        "devstart": "nodemon ./server/index.js",
         "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run devstart",
         "heroku-postbuild": "cd client && npm install client && npm run build"
     },

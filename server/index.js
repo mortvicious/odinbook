@@ -23,22 +23,22 @@ app.use('/api/auth', authRouter)
 app.use('/api/post', postRouter)
 app.use('/api/user', userRouter)
 
-// const start = async () => {
-//     try {
-//         await mongoose.connect(config.get('dbUrl'), {useNewUrlParser:true, useUnifiedTopology:true})
-//         const db = mongoose.connection
-//         db.on('error', console.error.bind(console, `Error MongoDB`))
-//         app.listen(PORT, () => {
-//             console.log(`Server started on port: ${PORT }`)
-//             console.log(mongoose.connection.readyState)
-//         })
-//     } catch (e) {
+const start = async () => {
+    try {
+        await mongoose.connect(config.get('dbUrl'), {useNewUrlParser:true, useUnifiedTopology:true})
+        const db = mongoose.connection
+        db.on('error', console.error.bind(console, `Error MongoDB`))
+        app.listen(PORT, () => {
+            console.log(`Server started on port: ${PORT }`)
+            console.log(mongoose.connection.readyState)
+        })
+    } catch (e) {
 
-//     }
-// }
+    }
+}
 
 
-// start()
+start()
 
 
 
