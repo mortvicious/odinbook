@@ -34,7 +34,6 @@ export default function CommentModel({feedPost, login, content}) {
               <span onClick={handleLike} className={styles['statistic-element']}><span className={(likes.includes(user.id)? styles['active-like'] : '') + " material-icons post neon"}>thumb_up</span> {likes.length}</span>
               <span onClick={handleDislike}className={styles['statistic-element']}><span className={(dislikes.includes(user.id)? styles['active-dislike'] : '') + " material-icons post neon"}>thumb_down</span> {dislikes.length}</span>
             </div>
-            {/* <span className={styles['statistic-element'] + ` ` + styles['date']}>{props.date}</span> */}
         </div>
     </div>
     :

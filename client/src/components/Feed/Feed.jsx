@@ -71,12 +71,6 @@ export default function Feed() {
   return (
     <div className={styles.Feed}>
         <Header/>
-        {/* <div className={styles['debug']}>
-            <button onClick={DEBUG_GET}>GET ALL POSTS</button>
-            <button onClick={DEBUG_FEED}>GET FEED UPDATE</button>
-            <button onClick={DEBUG_GETUSERLOGIN}>GET USER LOGIN</button>
-            <button onClick={DEBUG_DELETEALLPOSTS}>DELETE ALL POSTS</button>
-        </div> */}
         <Main/>
     </div>
   )

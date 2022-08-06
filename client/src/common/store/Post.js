@@ -7,7 +7,6 @@ class Post {
     content = ''
 
     type = ''
-    //post or comment
 
     constructor() {
         makeAutoObservable(this)

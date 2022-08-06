@@ -6,6 +6,7 @@
     align-items: center;
     text-align: center;
     // gap: 20px;
+    color: $clr-dark;
 }
 
 .user-info {
@@ -33,7 +34,7 @@
     width: 40px;
     aspect-ratio: 1;
     border-radius: 5px;
-    box-shadow: 0px 0px 7px #c6a2ff;
+    // box-shadow: 0px 0px 7px #c6a2ff;
 }
 
 .avatar-comment {
@@ -45,11 +46,11 @@
     font-family: $fnt-main;
     font-weight: 600;
     font-size: 20px;
-    text-shadow: 0px 0px 10px #c6a2ff;
+    // text-shadow: 0px 0px 10px #c6a2ff;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     &:hover {
-        text-shadow: 0px 0px 15px #c6a2ff;
+        // text-shadow: 0px 0px 15px #c6a2ff;
         transition: all 0.2s ease-in-out;
     }
 }

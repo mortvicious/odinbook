@@ -8,8 +8,6 @@ import friend from '../../common/store/Friend'
 
 const FriendModel = ({username, link, isRequest, isFriend, candidateFriendId, userId}) => {
 
-  // const [friend, setFriend] = useState({})
-
   const handleFriendRequest = async(e) => {
     const id = e.target.id
     if (id === 'accept') {

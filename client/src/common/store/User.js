@@ -6,6 +6,7 @@ class User {
 
     username = sessionStorage.getItem('username')
     isAuth = false
+    //isAuth = true
     error = null
     id = sessionStorage.getItem('id') || ''
     link = ''
@@ -21,10 +22,6 @@ class User {
         this.username = username
         this.id = id
         sessionStorage.setItem('username', username)
-
-        //debug
-        // this.isAuth = true
-        
     }
 
     setId = (id) => {
@@ -76,9 +73,6 @@ class User {
             )
         } catch (e) {
             this.error = e.response.data.message
-            // console.log(e.response.data.message)
-            // console.log(e.response.data.errors)
-            // console.log(`ERR IS ${this.error}`)
         }
     }
 

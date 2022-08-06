@@ -15,6 +15,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    overflow: hidden;
     .login-container {
         display: flex;
         flex-direction: column;
@@ -33,16 +34,16 @@
             padding: 1rem;
             border-radius: 5px;
             // box-shadow: 0px 0px 25px 2px rgba($clr-dark, 0.1);
-            border: 3px solid white;
-            box-shadow: 0px 0px 15px 0px #c6a2ff, inset 0px 0px 10px 0px #c6a2ff;
+            border: 3px solid $clr-contrast;
+            // box-shadow: 0px 0px 15px 0px #c6a2ff, inset 0px 0px 10px 0px #c6a2ff;
             transition: all 0.2s ease-in-out;
             background-color: rgba(black, 0);
-            color: #c6a2ff;
-            text-shadow: 0 0 5px #c6a2ff;
+            color: $clr-dark;
+            // text-shadow: 0 0 5px #c6a2ff;
             position: relative;
             &::placeholder {
-                color: white;
-                text-shadow: 0 0 5px red;
+                color: $clr-dark;
+                // text-shadow: 0 0 5px red;
                 font-weight: 200;
                 position: absolute;
                 font-size: 12px;
@@ -52,7 +53,7 @@
             }
             &:focus {
                 // box-shadow: 0px 0px 25px 2px rgba($clr-dark, 0.3);
-                box-shadow: 0px 0px 25px 0px #decaff, inset 0px 0px 5px 0px #c6a2ff;
+                // box-shadow: 0px 0px 25px 0px #decaff, inset 0px 0px 5px 0px #c6a2ff;
                 // border: 4px solid $clr-contrast;
                 transition: all 0.2s ease-in-out;
                 &::placeholder {
@@ -66,20 +67,20 @@
         // background-color: $clr-contrast;
         background-color: rgba(black, 0);
         // color: $clr-light;
-        color: white;
-        text-shadow: 0 0 5px #c6a2ff;
+        color: $clr-contrast;
+        // text-shadow: 0 0 5px #c6a2ff;
         padding: 1rem 2rem;
         border-radius: 5px;
-        border: 3px solid white;
-        box-shadow: 0 0 15px 0px #c6a2ff, inset 0 0 15px 0px #c6a2ff;
+        border: 3px solid $clr-contrast;
+        // box-shadow: 0 0 15px 0px #c6a2ff, inset 0 0 15px 0px #c6a2ff;
         font-weight: 600;
         transition: all 0.2s ease-in-out;
         &:hover {
             // background-color: $clr-light;
             // color: $clr-contrast !important;
             // border: 3px solid $clr-contrast;
-            box-shadow: 0 0 25px 0px #c6a2ff, inset 0 0 10px 0px #c6a2ff;
-            text-shadow: 0 0 7px #c6a2ff;
+            // box-shadow: 0 0 25px 0px #c6a2ff, inset 0 0 10px 0px #c6a2ff;
+            // text-shadow: 0 0 7px #c6a2ff;
             transition: all 0.2s ease-in-out;
         }
     }
@@ -88,10 +89,10 @@
         margin-top: -0.5rem;
         transition: all 0.2s ease-in-out;
         // text-shadow: $clr-contrast;
-        color: white;
+        color: $clr-contrast;
         &:hover {
             // color: $clr-contrast;
-            text-shadow: 0 0 5px #c6a2ff;
+            // text-shadow: 0 0 5px #c6a2ff;
             transition: all 0.2s ease-in-out;
         }
     }
@@ -106,11 +107,11 @@ h2.title {
     // font-family: mono;
     letter-spacing: 5px;
     position: relative;
-    text-shadow: 0px 0px 15px #c6a2ff;
+    // text-shadow: 0px 0px 15px #c6a2ff;
     // background-color: rgba(#c6a2ff, 0.1);
-    box-shadow: 0px 0px 45px 0px #c6a2ff, inset 0px 0px 45px 0px #c6a2ff;
+    // box-shadow: 0px 0px 45px 0px #c6a2ff, inset 0px 0px 45px 0px #c6a2ff;
     border-radius: 5px;
-    border: 4px solid $clr-light;
+    // border: 4px solid $clr-light;
     padding: 1rem;
     margin-top: 2rem;
     &::before {
@@ -129,11 +130,11 @@ h2.title {
 
 .error-field {
     position: absolute;
-    top: 40vh;
+    top: 50vh;
     left: 1rem;
-    color: rgb(255, 183, 183);
-    text-shadow: 0 0 5px red;
-    font-size: 20px;
+    color: red;
+    // text-shadow: 0 0 5px red;
+    font-size: 15px;
     font-family: $fnt-main;
     text-transform: uppercase;
     gap: 1rem;

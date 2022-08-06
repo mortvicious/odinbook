@@ -40,7 +40,6 @@ export default function Signup() {
     const handleSubmitBtn = async (e) => {
         e.preventDefault()
         setLoading(true)
-        // user.setError(null)
         const res = await user.registration(regBody.email, regBody.login, regBody.password, regBody.link)
         setLoading(false)
         setError(user.error)

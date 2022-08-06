@@ -7,8 +7,6 @@ export default function PostModel({username, content, link}) {
     <div className={styles.PostModel}>
         <UserModel username={username} link={link}/>
         <div className={styles['post']}>
-          {/* <h2 className={styles['title']}>{title}</h2> */}
-          {/* {content} */}
           <p className={styles['content']}>  
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat voluptas et minus, iusto accusamus, ea voluptatum ex nemo impedit eligendi, beatae sequi quisquam aut sapiente perspiciatis aliquid illum esse explicabo!     
           </p>

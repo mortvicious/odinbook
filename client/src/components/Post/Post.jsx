@@ -5,8 +5,6 @@ import styles from './Post.module.scss'
 import axios from 'axios'
 import user from '../../common/store/User'
 import Comment from './Comment'
-//change to CommentModel from '../../models/CommentModel'
-
 
 export default function Post(props) {
 

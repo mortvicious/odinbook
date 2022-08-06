@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Tab.module.scss'
+import SettingModel from '../../../models/SettingModel/SettingModel'
 
 export default function AccountTab() {
   return (
@@ -16,22 +17,23 @@ export default function AccountTab() {
           <span className="slider round"></span>
         </label> */}
       </div>
-      <div className={styles['settings-setting']}>
-        <span className={styles['setting-name']}>Email:</span>
-        <span className={styles['change-settings']}>Change</span>
-      </div>
-      <div className={styles['settings-setting']}>
-        <span className={styles['setting-name']}>Link:</span>
-        <span className={styles['change-settings']}>Change</span>
-      </div>
-      <div className={styles['settings-setting']}>
-        <span className={styles['setting-name']}>Username:</span>
-        <span className={styles['change-settings']}>Change</span>
-      </div>
-      <div className={styles['settings-setting']}>
-        <span className={styles['setting-name']}>Phone:</span>
-        <span className={styles['change-settings']}>Change</span>
-      </div>
+      <SettingModel
+        name='Name:'
+        set='Change'
+      />
+      <SettingModel
+        name='Link:'
+        set='Change'
+      />
+      <SettingModel
+        name='Username:'
+        set='Change'
+      />
+      <SettingModel
+        name='Phone:'
+        set='Change'
+        isSwitch={true}
+      />
     </div>
   )
 }

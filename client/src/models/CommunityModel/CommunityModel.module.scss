@@ -8,12 +8,13 @@
     align-items: center;
     // text-align: center;
     justify-content: space-between;
-    border: 3px solid white;
-    text-shadow: 0px 0px 5px #c6a2ff;
-    box-shadow: 0px 0px 10px #c6a2ff, inset 0px 0px 10px #c6a2ff;
+    border: 3px solid $clr-contrast;
+    // text-shadow: 0px 0px 5px #c6a2ff;
+    // box-shadow: 0px 0px 10px #c6a2ff, inset 0px 0px 10px #c6a2ff;
     border-radius: 5px;
     padding: 1rem;
     margin-top: 2rem;
+    color: $clr-dark;
     .functional-container {
         margin-top: 1rem;
         display: flex;
@@ -24,16 +25,16 @@
             width: 13rem;
             border: 2px solid white;
             background-color: rgba(black, 0);
-            text-shadow: 0px 0px 5px #c6a2ff;
-            box-shadow: 0px 0px 10px #c6a2ff, inset 0px 0px 10px #c6a2ff;
+            // text-shadow: 0px 0px 5px #c6a2ff;
+            // box-shadow: 0px 0px 10px #c6a2ff, inset 0px 0px 10px #c6a2ff;
             font-weight: 400;
-            color: white;
+            color: $clr-dark;
             padding: 1rem;
             border-radius: 5px;
             transition: all 0.2s ease-in-out;
             &:hover, :focus {
-                box-shadow: 0px 0px 15px #c6a2ff, inset 0px 0px 10px #c6a2ff;
-                text-shadow: 0px 0px 10px #c6a2ff;
+                // box-shadow: 0px 0px 15px #c6a2ff, inset 0px 0px 10px #c6a2ff;
+                // text-shadow: 0px 0px 10px #c6a2ff;
                 transition: all 0.2s ease-in-out;
             }
         }
@@ -45,7 +46,8 @@
     font-size: 40px;
     padding: 1rem;
     font-family: $fnt-main;
-    text-shadow: 0px 0px 5px #c6a2ff;
+    // text-shadow: 0px 0px 5px #c6a2ff;
+    color: $clr-contrast;
 }
 
 .subscribers-container {

@@ -1,33 +1,29 @@
-import { makeAutoObservable } from "mobx";
-import axios from 'axios'
+import { makeAutoObservable } from 'mobx'
 
 class Community {
+	constructor() {
+		makeAutoObservable(this)
+	}
 
-    constructor() {
-        makeAutoObservable(this)
-    }
+	createCommunity = async () => {}
 
-    createCommunity = async() => {}
+	deleteCommunity = async () => {}
 
-    deleteCommunity = async() => {}
+	editCommunity = async () => {}
 
-    editCommunity = async() => {}
+	changeSettings = async () => {}
 
-    changeSettings = async() => {}
+	addPersonToCommunity = async () => {}
 
-    addPersonToCommunity = async() => {}
+	removePersonFromCommunity = async () => {}
 
-    removePersonFromCommunity = async() => {}
+	promoteToAdmin = async () => {}
 
-    promoteToAdmin = async() => {}
+	transferOwnership = async () => {}
 
-    transferOwnership = async() => {}
+	addPost = async () => {}
 
-    addPost = async() => {}
-
-    deletePost = async() => {}
-
-
+	deletePost = async () => {}
 }
 
 export default new Community()

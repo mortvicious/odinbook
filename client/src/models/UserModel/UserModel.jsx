@@ -19,7 +19,6 @@ export default function UserModel(
         onUserPage
       }) {
 
-      // urlUserId = userId
       const {urlUserId} = useParams()
       const navigate = useNavigate()
 

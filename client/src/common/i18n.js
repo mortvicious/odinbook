@@ -4,27 +4,22 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 
 i18n
-  // Подключение бэкенда i18next
-  .use(Backend)
-  // Автоматическое определение языка 
-  .use(LanguageDetector)
-  // модуль инициализации
-  .use (initReactI18next)
-  .init({
-    // Стандартный язык
-    fallbackLng: 'en',
-    debug: false,
-    // Распознавание и кэширование языковых кук
-    detection: {
-      order: ['queryString', 'cookie'],
-      cache: ['cookie']
-    },
-    interpolation: {
-      escapeValue: false
-    },
-    react: {
-      useSuspense: false
-    }
-  })
+	.use(Backend)
+	.use(LanguageDetector)
+	.use(initReactI18next)
+	.init({
+		fallbackLng: 'en',
+		debug: false,
+		detection: {
+			order: ['queryString', 'cookie'],
+			cache: ['cookie'],
+		},
+		interpolation: {
+			escapeValue: false,
+		},
+		react: {
+			useSuspense: false,
+		},
+	})
 
-export default i18n;
+export default i18n

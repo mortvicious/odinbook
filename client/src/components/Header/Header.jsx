@@ -30,7 +30,6 @@ const Header = ({username, onUserPage}) => {
             <ul className={styles['functional-menu']}>
                 <NavLink to='/'><span className="material-icons func-m neon">home</span></NavLink>
                 <NavLink to='/search'><span className="material-icons func-m neon">search</span></NavLink>
-                {/* <NavLink to='/friends'><span className="material-icons func-m neon">person</span></NavLink> */}
                 <span onClick={handleFriendsBtn} className="material-icons func-m neon">person</span>
                 <NavLink to='/communities'><span className="material-icons func-m neon">people</span></NavLink>
                 <NavLink to='/messages'><span className="material-icons func-m neon">chat</span></NavLink>
@@ -40,13 +39,10 @@ const Header = ({username, onUserPage}) => {
             <div className={styles['user-container']}>
                 <UserModel 
                     mainUser={true} 
-                    // onClick={user.logout} 
                     username={user.username}
-                    // username={username}
                     reverse={true} 
                     link='user-page' 
                     onUserPage={onUserPage}
-                    // userId={user.id}  
                 />
             </div>
         </div>

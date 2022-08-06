@@ -23,23 +23,23 @@
             font-weight: 600;
             font-size: 20px;
             cursor: pointer;
-            text-shadow: 0px 0px 15px #c6a2ff;
+            // text-shadow: 0px 0px 15px #c6a2ff;
         }
     }
 }
 
 .title {
-    font-size: 30px;
-    font-weight: 100;
+    font-size: 50px;
+    font-weight: 500;
     color: $clr-contrast;
     font-family: $fnt-main;
     text-transform: uppercase;
     position: relative;
     letter-spacing: 5px;
     position: relative;
-    text-shadow: 0px 0px 15px #c6a2ff;
+    // text-shadow: 0px 0px 15px #c6a2ff;
     // background-color: rgba(#c6a2ff, 0.1);
-    box-shadow: 0px 0px 25px 0px #c6a2ff, inset 0px 0px 15px 0px #c6a2ff;
+    // box-shadow: 0px 0px 25px 0px #c6a2ff, inset 0px 0px 15px 0px #c6a2ff;
     border-radius: 5px;
     border: 3px solid $clr-light;
     padding: 1rem;

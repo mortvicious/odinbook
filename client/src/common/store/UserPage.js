@@ -1,6 +1,5 @@
 import { makeAutoObservable } from "mobx";
 import axios from 'axios'
-import PATH from '../routing/routes'
 
 class UserPage {
 

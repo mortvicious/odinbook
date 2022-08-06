@@ -4,7 +4,7 @@
 .Post {
     display: flex;
     flex-direction: column;
-    border: 1px solid white;
+    border: 1px solid $clr-contrast;
     // border-left: none;
     // border-right: none;
     // width: 40%;
@@ -12,7 +12,7 @@
     border-radius: 5px;
     position: relative;
     margin-top: 2rem;
-    box-shadow: 0px 0px 10px 0px #c6a2ff, inset 0px 0px 5px 0px #c6a2ff;
+    // box-shadow: 0px 0px 10px 0px #c6a2ff, inset 0px 0px 5px 0px #c6a2ff;
     .post-user {
         display: flex;
         align-items: center;
@@ -25,7 +25,7 @@
             font-weight: 100;
             font-size: 12px;
             font-family: $fnt-main;
-            color: lightgray;
+            // color: lightgray;
         }
         .post-user-info {
             display: flex;
@@ -41,21 +41,22 @@
         }
         .post-user-username {
             color: $clr-contrast;
+            color: $clr-dark;
             font-weight: 600;
             font-size: 20px;
-            text-shadow: 0px 0px 10px #c6a2ff;
+            // text-shadow: 0px 0px 10px #c6a2ff;
             transition: all 0.2s ease-in-out;
             cursor: pointer;
             &:hover {
-                text-shadow: 0px 0px 15px #c6a2ff;
+                // text-shadow: 0px 0px 15px #c6a2ff;
                 transition: all 0.2s ease-in-out;
             }
         }
         .post-user-title {
             font-weight: 400;
             font-size: 18px;
-            text-shadow: 0px 0px 15px #c6a2ff;
-            color: white;
+            // text-shadow: 0px 0px 15px #c6a2ff;
+            // color: white;
 
         }
     }
@@ -65,13 +66,14 @@
         width: 80%;
         text-align: left;
         min-height: 30px;
-        color: white;
+        // color: white;
         white-space: pre-wrap;
     }
     .post-more {
         font-size: 40px;
         align-self: flex-start;
         color: $clr-contrast;
+        // color: $clr-dark;
     }
     .post-statistics {
         align-self: flex-start;
@@ -109,6 +111,7 @@
             font-size: 12px;
             font-family: $fnt-main;
             color: lightgray;
+            color: $clr-dark;
         }
         // .date {
         //     // margin-left: 120%;
@@ -138,9 +141,9 @@
     resize: none;
     overflow: hidden;
     background-color: rgba(black, 0);
-    box-shadow: 0px 0px 10px 0 #c6a2ff, inset 0px 0px 5px 0 #c6a2ff;
+    // box-shadow: 0px 0px 10px 0 #c6a2ff, inset 0px 0px 5px 0 #c6a2ff;
     transition: all 0.2s ease-in-out;
-    border: 2px solid white;
+    border: 2px solid $clr-contrast;
     // background-color: $clr-active;
     color: white;
     font-weight: 200;
@@ -174,13 +177,13 @@
 }
 
 .active-like {
-    color: rgb(176, 255, 181) !important;
-    text-shadow: 0px 0px 5px rgb(76, 255, 88) !important;
+    color: rgb(93, 191, 101) !important;
+    // text-shadow: 0px 0px 5px rgb(76, 255, 88) !important;
 }
 
 .active-dislike {
-    color: rgb(255, 176, 176) !important;
-    text-shadow: 0px 0px 5px rgb(255, 76, 76) !important;
+    color: rgb(143, 68, 68) !important;
+    // text-shadow: 0px 0px 5px rgb(255, 76, 76) !important;
 }
 
 .not-active {

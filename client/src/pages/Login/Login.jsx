@@ -27,18 +27,13 @@ const Login = observer(() => {
     await user.login(regBody.email, regBody.password)
       .then(() => setLoading(false))
     setError(user.error)
-    // handleErrorsShow()
   }
 
   const handleErrorsShow = () => {
     console.log(`ERRRR IS ${error}`)
     return (
-        // error.map(err => {
-            // return (
-                <p>{error}</p>
-            // )
-        )
-    // )
+            <p>{error}</p>
+          )
   }
 
 
@@ -58,7 +53,6 @@ const Login = observer(() => {
       <div className={styles.Login}>
         <h2 className={styles['title']}>Cyberwarld</h2>
         <div className={'loading-spinner-wrapper ' + (isLoading? 'd-b' : '')}>
-          {/* <div className="lds-ripple"><div></div><div></div></div> */}
           <LoadingCircle/>
         </div>
           <div className={styles['error-field']}>

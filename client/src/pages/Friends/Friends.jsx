@@ -36,7 +36,6 @@ export default function Friends(props) {
   const getUsersToDisplayInFriends = async() => {
     const _arr = [...displayFriends]
     for (let f of friends) {
-      // const _friend = await userPage.fetchUserDataLite(f)
       const _friend = await friend.getFriend(f)
       _arr.push(
         {

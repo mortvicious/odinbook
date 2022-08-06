@@ -22,7 +22,6 @@ export default function UserPage(props) {
                 likes={post.likes}
                 dislikes={post.dislikes}
                 comments={post.comments}
-                // comments={[{content: '123'}]}
                 date={post.date}
                 id={post._id}
                 userId={post.userId}
